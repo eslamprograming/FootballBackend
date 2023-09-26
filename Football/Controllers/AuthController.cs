@@ -1,4 +1,5 @@
-﻿using BLL.IService;
+﻿using BLL.Helper;
+using BLL.IService;
 using BLL.Service;
 using DAL.Entities;
 using Football.Models.AuthVM;
@@ -16,6 +17,8 @@ namespace Football.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IAuthService _authService;
         private readonly ISendMailService _sendMailService;
+        
+
 
         public AuthController(UserManager<ApplicationUser> userManager,IAuthService authService, ISendMailService sendMailService)
         {
@@ -45,5 +48,12 @@ namespace Football.Controllers
         //    await _sendMailService.sendEmailAsync(mailVM.ToMail,mailVM.subject,mailVM.body);
         //    return Ok("send");
         //}
+        [HttpPost]
+        [Route("SendSMS")]
+        public IActionResult sendSMS()
+        {
+            SMS.sendSMS("+201280369080","Welcome to Egypt");
+            return Ok("send");
+        }
     }
 }

@@ -22,7 +22,11 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFramework
 //service
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+
+
 builder.Services.AddScoped<ISendMailService,SendMailService>();
+
+
 
 
 //JWT
@@ -102,6 +106,7 @@ app.UseSwaggerUI(c =>
 });
 
 app.UseHttpsRedirection();
+
 app.UseCors(c => c.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
 
