@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BRS21WmClWelKESmjY+5KLW0GVxzx6ENaY6n4GZR6R1DYKCZfdR00rY0u5KPj1LbNAsPt1MmXcq8mzxrzCNNvw==",
+  "dgSpecHash": "Wx8uHDytTjVpO0P4mGCjAtfD++uj8YcEAWdenmdBYwEoaEqQvRu/UqWj8koQUR29v5LewMg+D7nMGLKNOIkT4A==",
   "success": true,
-  "projectFilePath": "F:\\About projects\\Football\\Football\\BLL\\BLL.csproj",
+  "projectFilePath": "F:\\footballmatch\\BLL\\BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eslam\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\eslam\\.nuget\\packages\\mailkit\\4.2.0\\mailkit.4.2.0.nupkg.sha512",

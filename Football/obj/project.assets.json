@@ -663,6 +663,22 @@
       "MessagePackAnalyzer/2.1.152": {
         "type": "package"
       },
+      "Microsoft.AspNetCore.Authentication.Google/6.0.22": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.22": {
         "type": "package",
         "dependencies": {
@@ -4916,6 +4932,21 @@
         "messagepackanalyzer.nuspec",
         "tools/install.ps1",
         "tools/uninstall.ps1"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Google/6.0.22": {
+      "sha512": "7Ako202q0Y7C224kQT0bfgJ2B59Oi3BtJAyBQypzN4P2tnbN62NCBiM7OhE0oOO1BPqGhmIx1tYUHvDqdQJyjg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.google/6.0.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.xml",
+        "microsoft.aspnetcore.authentication.google.6.0.22.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.google.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.22": {
@@ -11678,6 +11709,7 @@
     "net6.0": [
       "BLL >= 1.0.0",
       "DAL >= 1.0.0",
+      "Microsoft.AspNetCore.Authentication.Google >= 6.0.22",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.22",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.22",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
@@ -11692,11 +11724,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\About projects\\Football\\Football\\Football\\Football.csproj",
+      "projectUniqueName": "F:\\footballmatch\\Football\\Football.csproj",
       "projectName": "Football",
-      "projectPath": "F:\\About projects\\Football\\Football\\Football\\Football.csproj",
+      "projectPath": "F:\\footballmatch\\Football\\Football.csproj",
       "packagesPath": "C:\\Users\\eslam\\.nuget\\packages\\",
-      "outputPath": "F:\\About projects\\Football\\Football\\Football\\obj\\",
+      "outputPath": "F:\\footballmatch\\Football\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -11719,11 +11751,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "F:\\About projects\\Football\\Football\\BLL\\BLL.csproj": {
-              "projectPath": "F:\\About projects\\Football\\Football\\BLL\\BLL.csproj"
+            "F:\\footballmatch\\BLL\\BLL.csproj": {
+              "projectPath": "F:\\footballmatch\\BLL\\BLL.csproj"
             },
-            "F:\\About projects\\Football\\Football\\DAL\\DAL.csproj": {
-              "projectPath": "F:\\About projects\\Football\\Football\\DAL\\DAL.csproj"
+            "F:\\footballmatch\\DAL\\DAL.csproj": {
+              "projectPath": "F:\\footballmatch\\DAL\\DAL.csproj"
             }
           }
         }
@@ -11738,6 +11770,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Google": {
+            "target": "Package",
+            "version": "[6.0.22, )"
+          },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[6.0.22, )"

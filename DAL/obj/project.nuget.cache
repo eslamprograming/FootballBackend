@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RD0azdXa2o/10zk9EyG+RFpCZ3lbrK+5pSBH7/j48laSSEn4n9DcYwf87XlFaNeDpkxcIpo9GqVj9vxihwkB7g==",
+  "dgSpecHash": "lyVVTvHbHu1eUST/hXSxmhFx7/ugaYFa8QpJVRWpGdOtIhxGmuIwefiaenVcmlBJnKAQbiOAv6DXRvmjio8T2g==",
   "success": true,
-  "projectFilePath": "F:\\About projects\\Football\\Football\\DAL\\DAL.csproj",
+  "projectFilePath": "F:\\footballmatch\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eslam\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\eslam\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.22\\microsoft.aspnetcore.cryptography.internal.6.0.22.nupkg.sha512",

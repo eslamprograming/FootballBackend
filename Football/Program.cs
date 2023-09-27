@@ -28,6 +28,19 @@ builder.Services.AddScoped<ISendMailService,SendMailService>();
 
 
 
+//// ConfigureServices method
+//builder.Services.AddAuthentication(options =>
+//{
+//    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+//})
+//.AddGoogle(options =>
+//{
+//    options.ClientId = "819356617577-e62e5fdn2683m8clb2p3m7f5j3g55tv6.apps.googleusercontent.com";
+//    options.ClientSecret = "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";
+//});
+
+
+
 
 //JWT
 

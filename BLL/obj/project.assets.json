@@ -3784,11 +3784,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\About projects\\Football\\Football\\BLL\\BLL.csproj",
+      "projectUniqueName": "F:\\footballmatch\\BLL\\BLL.csproj",
       "projectName": "BLL",
-      "projectPath": "F:\\About projects\\Football\\Football\\BLL\\BLL.csproj",
+      "projectPath": "F:\\footballmatch\\BLL\\BLL.csproj",
       "packagesPath": "C:\\Users\\eslam\\.nuget\\packages\\",
-      "outputPath": "F:\\About projects\\Football\\Football\\BLL\\obj\\",
+      "outputPath": "F:\\footballmatch\\BLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3810,8 +3810,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "F:\\About projects\\Football\\Football\\DAL\\DAL.csproj": {
-              "projectPath": "F:\\About projects\\Football\\Football\\DAL\\DAL.csproj"
+            "F:\\footballmatch\\DAL\\DAL.csproj": {
+              "projectPath": "F:\\footballmatch\\DAL\\DAL.csproj"
             }
           }
         }

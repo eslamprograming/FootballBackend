@@ -2193,11 +2193,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\About projects\\Football\\Football\\DAL\\DAL.csproj",
+      "projectUniqueName": "F:\\footballmatch\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "F:\\About projects\\Football\\Football\\DAL\\DAL.csproj",
+      "projectPath": "F:\\footballmatch\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\eslam\\.nuget\\packages\\",
-      "outputPath": "F:\\About projects\\Football\\Football\\DAL\\obj\\",
+      "outputPath": "F:\\footballmatch\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

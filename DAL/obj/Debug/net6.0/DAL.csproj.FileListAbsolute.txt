@@ -12,3 +12,17 @@ F:\About projects\Football\Football\DAL\obj\Debug\net6.0\refint\DAL.dll
 F:\About projects\Football\Football\DAL\obj\Debug\net6.0\DAL.pdb
 F:\About projects\Football\Football\DAL\obj\Debug\net6.0\DAL.genruntimeconfig.cache
 F:\About projects\Football\Football\DAL\obj\Debug\net6.0\ref\DAL.dll
+F:\footballmatch\DAL\bin\Debug\net6.0\DAL.deps.json
+F:\footballmatch\DAL\bin\Debug\net6.0\DAL.runtimeconfig.json
+F:\footballmatch\DAL\bin\Debug\net6.0\DAL.dll
+F:\footballmatch\DAL\bin\Debug\net6.0\DAL.pdb
+F:\footballmatch\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+F:\footballmatch\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+F:\footballmatch\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+F:\footballmatch\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+F:\footballmatch\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+F:\footballmatch\DAL\obj\Debug\net6.0\DAL.dll
+F:\footballmatch\DAL\obj\Debug\net6.0\refint\DAL.dll
+F:\footballmatch\DAL\obj\Debug\net6.0\DAL.pdb
+F:\footballmatch\DAL\obj\Debug\net6.0\DAL.genruntimeconfig.cache
+F:\footballmatch\DAL\obj\Debug\net6.0\ref\DAL.dll
