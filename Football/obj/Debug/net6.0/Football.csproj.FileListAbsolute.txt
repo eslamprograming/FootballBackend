@@ -535,3 +535,12 @@ F:\footballmatch\Football\obj\Debug\net6.0\Football.pdb
 F:\footballmatch\Football\obj\Debug\net6.0\Football.genruntimeconfig.cache
 F:\footballmatch\Football\obj\Debug\net6.0\ref\Football.dll
 F:\footballmatch\Football\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll
+F:\footballmatch\Football\bin\Debug\net6.0\PayPalCheckoutSdk.dll
+F:\footballmatch\Football\bin\Debug\net6.0\PayPalHttp-Dotnet.dll
+F:\footballmatch\Football\bin\Debug\net6.0\Google.Apis.dll
+F:\footballmatch\Football\bin\Debug\net6.0\Google.Apis.Auth.PlatformServices.dll
+F:\footballmatch\Football\bin\Debug\net6.0\Google.Apis.Auth.dll
+F:\footballmatch\Football\bin\Debug\net6.0\Google.Apis.Core.dll
+F:\footballmatch\Football\bin\Debug\net6.0\Google.Apis.Drive.v3.dll
+F:\footballmatch\Football\bin\Debug\net6.0\PayPal.dll
+F:\footballmatch\Football\bin\Debug\net6.0\credentials.json
