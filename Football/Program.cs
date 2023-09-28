@@ -3,6 +3,8 @@ using BLL.IService;
 using BLL.Service;
 using DAL.Data;
 using DAL.Entities;
+using DAL.IRepo;
+using DAL.Repo;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +20,15 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+
+//Repo
+builder.Services.AddScoped<ITeamRepo, TeamRepo>();
+builder.Services.AddScoped<IVenueRepo, VenueRepo>();
+builder.Services.AddScoped<IStandingsRepo, StandingsRepo>();
+builder.Services.AddScoped<IPlayerRepo, PlayerRepo>();
+builder.Services.AddScoped<IMatchRepo, MatchRepo>();
+builder.Services.AddScoped<ILeagueRepo, LeagueRepo>();
+
 
 //service
 builder.Services.AddScoped<IAuthService, AuthService>();

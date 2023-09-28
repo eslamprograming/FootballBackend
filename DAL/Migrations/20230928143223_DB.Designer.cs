@@ -4,6 +4,7 @@ using DAL.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230928143223_DB")]
+    partial class DB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,9 +105,6 @@ namespace DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LeagueID"), 1L, 1);
 
-                    b.Property<bool>("Delete")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
@@ -139,9 +138,6 @@ namespace DAL.Migrations
 
                     b.Property<int>("AwayTeamScore")
                         .HasColumnType("int");
-
-                    b.Property<bool>("Delete")
-                        .HasColumnType("bit");
 
                     b.Property<int>("HomeTeamID")
                         .HasColumnType("int");
@@ -191,9 +187,6 @@ namespace DAL.Migrations
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("Delete")
-                        .HasColumnType("bit");
-
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -227,9 +220,6 @@ namespace DAL.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StandingID"), 1L, 1);
-
-                    b.Property<bool>("Delete")
-                        .HasColumnType("bit");
 
                     b.Property<int>("Draws")
                         .HasColumnType("int");
@@ -276,9 +266,6 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Delete")
-                        .HasColumnType("bit");
-
                     b.Property<int>("FoundedYear")
                         .HasColumnType("int");
 
@@ -290,9 +277,6 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LeagueID")
-                        .HasColumnType("int");
-
                     b.Property<string>("TeamLogo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -302,8 +286,6 @@ namespace DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TeamID");
-
-                    b.HasIndex("LeagueID");
 
                     b.ToTable("teams");
                 });
@@ -322,9 +304,6 @@ namespace DAL.Migrations
                     b.Property<string>("ContactInfo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Delete")
-                        .HasColumnType("bit");
 
                     b.Property<string>("Location")
                         .IsRequired()
@@ -529,17 +508,6 @@ namespace DAL.Migrations
                     b.Navigation("Team");
                 });
 
-            modelBuilder.Entity("DAL.Entities.Team", b =>
-                {
-                    b.HasOne("DAL.Entities.League", "League")
-                        .WithMany("Teams")
-                        .HasForeignKey("LeagueID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("League");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -596,8 +564,6 @@ namespace DAL.Migrations
                     b.Navigation("Matches");
 
                     b.Navigation("Standings");
-
-                    b.Navigation("Teams");
                 });
 
             modelBuilder.Entity("DAL.Entities.Team", b =>

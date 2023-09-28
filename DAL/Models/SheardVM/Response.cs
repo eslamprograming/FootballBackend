@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DAL.Models.SheardVM
+{
+    public class Response<T>
+    {
+        public bool success { get; set; }
+        public string? statuscode { get; set; }  
+        public string? message { get; set; } 
+        public List<T>? values { get; set; }
+        public T? Value { get; set; }    
+    }
+}

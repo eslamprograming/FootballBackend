@@ -12,5 +12,12 @@ namespace DAL.Data
     public class ApplicationDbContext:IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options) : base(options) { }
+        public DbSet<Team> teams { get; set; }
+        public DbSet<Player> Players { get; set; }
+        public DbSet<Match> Matches { get; set; }
+        public DbSet<League> Leagues { get; set; }
+        public DbSet<Standings> Standings { get; set; }
+        public DbSet<Venue> Venues { get; set; }
+
     }
 }

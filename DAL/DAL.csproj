@@ -7,10 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="IRepo\" />
     <Folder Include="Models\AuthVM\" />
-    <Folder Include="Models\SheardVM\" />
-    <Folder Include="Repo\" />
   </ItemGroup>
 
   <ItemGroup>
