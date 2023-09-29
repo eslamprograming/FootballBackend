@@ -2,6 +2,7 @@
 using DAL.Entities;
 using DAL.IRepo;
 using DAL.Models.SheardVM;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,13 @@ namespace DAL.Repo
         {
             try
             {
+                await db.Venues.AddAsync(Venue);
+                await db.SaveChangesAsync();
                 return new Response<Venue>
                 {
-                    success = true
+                    success = true,
+                    statuscode="200",
+                    Value=Venue
                 };
             }
             catch (Exception e)
@@ -42,9 +47,22 @@ namespace DAL.Repo
         {
             try
             {
+                var venue = await db.Venues.Where(n => n.VenueID == Id && n.Delete == false).SingleOrDefaultAsync();
+                if (venue == null)
+                {
+                    return new Response<Venue>
+                    {
+                        success = false,
+                        statuscode = "400",
+                        message = "this venue can not found"
+                    };
+                }
+                venue.Delete = true;
+                await db.SaveChangesAsync();
                 return new Response<Venue>
                 {
-                    success = true
+                    success = true,
+                    statuscode="200"
                 };
             }
             catch (Exception e)
@@ -57,13 +75,25 @@ namespace DAL.Repo
             }
         }
 
-        public async Task<Response<Venue>> GetAllVenueRepo()
+        public async Task<Response<Venue>> GetAllVenueRepo(int groupCount)
         {
             try
             {
+                var AllVenueCount = await db.Venues.Where(n => n.Delete == false).CountAsync();
+                int group;
+                if (AllVenueCount % 10 == 0)
+                {
+                    group = AllVenueCount / 10;
+                }
+                group = (AllVenueCount / 10) + 1;
+                var AllVenueData = await db.Venues.Where(n => n.Delete == false).Skip((groupCount - 1) * 10).Take(10).ToListAsync();
+
                 return new Response<Venue>
                 {
-                    success = true
+                    success = true,
+                    statuscode="200",
+                    values=AllVenueData,
+                    groups=group
                 };
             }
             catch (Exception e)
@@ -80,9 +110,21 @@ namespace DAL.Repo
         {
             try
             {
+                var venue = await db.Venues.Where(n => n.VenueID == Id && n.Delete == false).SingleOrDefaultAsync();
+                if (venue == null)
+                {
+                    return new Response<Venue>
+                    {
+                        success = false,
+                        statuscode = "400",
+                        message = "this venue can not found"
+                    };
+                }
                 return new Response<Venue>
                 {
-                    success = true
+                    success = true,
+                    statuscode="200",
+                    Value= venue
                 };
             }
             catch (Exception e)
@@ -99,9 +141,27 @@ namespace DAL.Repo
         {
             try
             {
+                var venue = await db.Venues.Where(n => n.VenueID == Id && n.Delete == false).SingleOrDefaultAsync();
+                if (venue == null)
+                {
+                    return new Response<Venue>
+                    {
+                        success = false,
+                        statuscode = "400",
+                        message = "this venue can not found"
+                    };
+                }
+                venue.VenueName = Venue.VenueName;
+                venue.Capacity = Venue.Capacity;
+                venue.Location = Venue.Location;
+                venue.ContactInfo = Venue.ContactInfo;
+
+                db.SaveChangesAsync();
+
                 return new Response<Venue>
                 {
-                    success = true
+                    success = true,
+                    statuscode="200"
                 };
             }
             catch (Exception e)

@@ -14,6 +14,6 @@ namespace DAL.IRepo
         Task<Response<Venue>> UpdateVenueRepo(int Id, Venue Venue);
         Task<Response<Venue>> DeleteVenueRepo(int Id);
         Task<Response<Venue>> GetVenueRepo(int Id);
-        Task<Response<Venue>> GetAllVenueRepo();
+        Task<Response<Venue>> GetAllVenueRepo(int groupCount);
     }
 }

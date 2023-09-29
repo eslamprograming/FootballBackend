@@ -14,6 +14,6 @@ namespace DAL.IRepo
         Task<Response<Match>> UpdateMatchRepo(int Id, Match Match);
         Task<Response<Match>> DeleteMatchRepo(int Id);
         Task<Response<Match>> GetMatchRepo(int Id);
-        Task<Response<Match>> GetAllMatchRepo();
+        Task<Response<Match>> GetAllMatchRepo(int groupCount);
     }
 }

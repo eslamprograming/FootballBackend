@@ -13,5 +13,7 @@ namespace DAL.Models.SheardVM
         public string? message { get; set; } 
         public List<T>? values { get; set; }
         public T? Value { get; set; }    
+        public int? groups { get; set; }
+        public int? pagging { get; set; } = 10;
     }
 }

@@ -14,6 +14,6 @@ namespace DAL.IRepo
         Task<Response<League>> UpdateLeagueRepo(int Id, League League);
         Task<Response<League>> DeleteLeagueRepo(int Id);
         Task<Response<League>> GetLeagueRepo(int Id);
-        Task<Response<League>> GetAllLeagueRepo();
+        Task<Response<League>> GetAllLeagueRepo(int groupCount);
     }
 }

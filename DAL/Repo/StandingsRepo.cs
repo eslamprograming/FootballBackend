@@ -2,6 +2,7 @@
 using DAL.Entities;
 using DAL.IRepo;
 using DAL.Models.SheardVM;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,13 @@ namespace DAL.Repo
         {
             try
             {
+                await db.Standings.AddAsync(Standings);
+                await db.SaveChangesAsync();
                 return new Response<Standings>
                 {
                     success = true
+                    ,statuscode="201",
+                    Value=Standings
                 };
             }
             catch (Exception e)
@@ -42,9 +47,22 @@ namespace DAL.Repo
         {
             try
             {
+                var standing = await db.Standings.Where(n => n.StandingID == Id && n.Delete == false).SingleOrDefaultAsync();
+                if (standing == null)
+                {
+                    return new Response<Standings>
+                    {
+                        success = false,
+                        statuscode = "400",
+                        message = "this player can not found"
+                    };
+                }
+                standing.Delete = true;
+                await db.SaveChangesAsync();
                 return new Response<Standings>
                 {
-                    success = true
+                    success = true,
+                    statuscode="200"
                 };
             }
             catch (Exception e)
@@ -57,13 +75,25 @@ namespace DAL.Repo
             }
         }
 
-        public async Task<Response<Standings>> GetAllStandingsRepo()
+        public async Task<Response<Standings>> GetAllStandingsRepo(int groupCount)
         {
             try
             {
+                var AllStandingCount = await db.Standings.Where(n => n.Delete == false).CountAsync();
+                int group;
+                if (AllStandingCount % 10 == 0)
+                {
+                    group = AllStandingCount / 10;
+                }
+                group = (AllStandingCount / 10) + 1;
+                var AllStandingData = await db.Standings.Where(n => n.Delete == false).Skip((groupCount - 1) * 10).Take(10).ToListAsync();
+
                 return new Response<Standings>
                 {
-                    success = true
+                    success = true,
+                    statuscode="200",
+                    values=AllStandingData,
+                    groups=group
                 };
             }
             catch (Exception e)
@@ -80,9 +110,21 @@ namespace DAL.Repo
         {
             try
             {
+                var standing = await db.Standings.Where(n => n.StandingID == Id && n.Delete == false).SingleOrDefaultAsync();
+                if (standing == null)
+                {
+                    return new Response<Standings>
+                    {
+                        success = false,
+                        statuscode = "400",
+                        message = "this player can not found"
+                    };
+                }
                 return new Response<Standings>
                 {
-                    success = true
+                    success = true,
+                    statuscode="200",
+                    Value=standing
                 };
             }
             catch (Exception e)
@@ -99,9 +141,32 @@ namespace DAL.Repo
         {
             try
             {
+                var standing = await db.Standings.Where(n => n.StandingID == Id && n.Delete == false).SingleOrDefaultAsync();
+                if (standing == null)
+                {
+                    return new Response<Standings>
+                    {
+                        success = false,
+                        statuscode = "400",
+                        message = "this player can not found"
+                    };
+                }
+                standing.LeagueID = Standings.LeagueID;
+                standing.League = Standings.League;
+                standing.TeamID = Standings.TeamID;
+                standing.Team = Standings.Team;
+                standing.Wins = Standings.Wins;
+                standing.Draws = Standings.Draws;
+                standing.Losses = Standings.Losses;
+                standing.Points = Standings.Points;
+                standing.GoalsFor = Standings.GoalsFor;
+                standing.GoalsAgainst = Standings.GoalsAgainst;
+
+                await db.SaveChangesAsync();
                 return new Response<Standings>
                 {
-                    success = true
+                    success = true,
+                    statuscode="200",
                 };
             }
             catch (Exception e)

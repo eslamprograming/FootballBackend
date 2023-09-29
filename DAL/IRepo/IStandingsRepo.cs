@@ -14,6 +14,6 @@ namespace DAL.IRepo
         Task<Response<Standings>> UpdateStandingsRepo(int Id, Standings Standings);
         Task<Response<Standings>> DeleteStandingsRepo(int Id);
         Task<Response<Standings>> GetStandingsRepo(int Id);
-        Task<Response<Standings>> GetAllStandingsRepo();
+        Task<Response<Standings>> GetAllStandingsRepo(int groupCount);
     }
 }
