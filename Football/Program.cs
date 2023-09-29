@@ -33,9 +33,14 @@ builder.Services.AddScoped<ILeagueRepo, LeagueRepo>();
 //service
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
-
-
 builder.Services.AddScoped<ISendMailService,SendMailService>();
+
+builder.Services.AddScoped<ITeamService, TeamService>();
+builder.Services.AddScoped<IVenueService, VenueService>();
+builder.Services.AddScoped<IStandingsService, StandingsService>();
+builder.Services.AddScoped<IPlayerService, PlayerService>();
+builder.Services.AddScoped<IMatchService, MatchService>();
+builder.Services.AddScoped<ILeagueService, LeagueService>();
 
 
 
