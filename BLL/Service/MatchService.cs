@@ -93,7 +93,7 @@ namespace BLL.Service
             try
             {
                 var result=await _matchRepo.GetMatchRepo(Id);
-                return result
+                return result;
             }
             catch (Exception e)
             {

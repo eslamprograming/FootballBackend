@@ -12,13 +12,13 @@ namespace DAL.Entities
         [Key]
 
         public int LeagueID { get; set; }
-        public string LeagueName { get; set; }
-        public string Season { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public ICollection<Match> Matches { get; set; } 
-        public ICollection<Standings> Standings { get; set; } 
-        public ICollection<Team> Teams { get; set; }    
-        public bool Delete { get; set; }
+        public string? LeagueName { get; set; }
+        public string? Season { get; set; }
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
+        public ICollection<Match>? Matches { get; set; } 
+        public ICollection<Standings>? Standings { get; set; } 
+        public ICollection<Team>? Teams { get; set; }    
+        public bool? Delete { get; set; }
     }
 }

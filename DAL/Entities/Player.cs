@@ -12,15 +12,15 @@ namespace DAL.Entities
         [Key]
 
         public int PlayerID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public string Nationality { get; set; }
-        public string Position { get; set; }
-        public int ShirtNumber { get; set; }
-        public int CurrentTeamID { get; set; }
-        public Team CurrentTeam { get; set; }
-        public bool Delete { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
+        public DateTime? DateOfBirth { get; set; }
+        public string? Nationality { get; set; }
+        public string? Position { get; set; }
+        public int? ShirtNumber { get; set; }
+        public int? CurrentTeamID { get; set; }
+        public Team? CurrentTeam { get; set; }
+        public bool? Delete { get; set; }
 
     }
 }

@@ -32,7 +32,7 @@ namespace BLL.Service
                 player.Position = PlayersVM.Position;
                 player.ShirtNumber = PlayersVM.ShirtNumber;
                 player.CurrentTeamID = PlayersVM.CurrentTeamID;
-                player.CurrentTeam = PlayersVM.CurrentTeam;
+                player.Delete = false;
 
                 var result = await _playerRepo.CreatePlayerRepo(player);
 
@@ -116,7 +116,7 @@ namespace BLL.Service
                 player.Position = PlayersVM.Position;
                 player.ShirtNumber = PlayersVM.ShirtNumber;
                 player.CurrentTeamID = PlayersVM.CurrentTeamID;
-                player.CurrentTeam = PlayersVM.CurrentTeam;
+                player.Delete = false;
 
                 var result= await _playerRepo.UpdatePlayerRepo(Id,player);
                 return result;

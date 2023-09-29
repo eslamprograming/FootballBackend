@@ -31,7 +31,7 @@ namespace BLL.Service
                 team.HomeCity = teamVM.HomeCity;
                 team.HomeStadium = teamVM.HomeStadium;
                 team.CoachName = teamVM.CoachName;
-                team.League = teamVM.League;
+                team.Delete = false;
 
                 var result = await _teamRepo.CreateTeamRepo(team);
 
@@ -66,11 +66,11 @@ namespace BLL.Service
             }
         }
 
-        public async Task<Response<Team>> GetAllTeamAsync(League leageu)
+        public async Task<Response<Team>> GetAllTeamAsync(int leageuId)
         {
             try
             {
-                var result = await _teamRepo.GetAllTeamRepo(leageu);
+                var result = await _teamRepo.GetAllTeamRepo(leageuId);
 
                 return result;
             }
@@ -115,7 +115,7 @@ namespace BLL.Service
                 team.HomeCity = teamVM.HomeCity;
                 team.HomeStadium = teamVM.HomeStadium;
                 team.CoachName = teamVM.CoachName;
-                team.League = teamVM.League;
+                team.Delete = false;
 
                 var result = await _teamRepo.UpdateTeamRepo(Id, team);
                 return result;

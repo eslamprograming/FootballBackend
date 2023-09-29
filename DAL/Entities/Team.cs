@@ -13,17 +13,17 @@ namespace DAL.Entities
         [Key]
 
         public int TeamID { get; set; }
-        public string TeamName { get; set; }
-        public string TeamLogo { get; set; }
-        public int FoundedYear { get; set; }
-        public string HomeCity { get; set; }
-        public string HomeStadium { get; set; }
-        public string CoachName { get; set; }
-        public ICollection<Player> Players { get; set; } 
-        public ICollection<Match> HomeMatches { get; set; }
-        public League League { get; set; }  
+        public string? TeamName { get; set; }
+        public string? TeamLogo { get; set; }
+        public int? FoundedYear { get; set; }
+        public string? HomeCity { get; set; }
+        public string? HomeStadium { get; set; }
+        public string? CoachName { get; set; }
+        public ICollection<Player>? Players { get; set; } 
+        public ICollection<Match>? HomeMatches { get; set; }
+        public League? League { get; set; }  
         //public ICollection<Match> AwayMatches { get; set; }
-        public bool Delete { get; set; }
+        public bool? Delete { get; set; }
 
     }
 }

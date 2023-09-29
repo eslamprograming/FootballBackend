@@ -12,12 +12,12 @@ namespace DAL.Entities
         [Key]
 
         public int VenueID { get; set; }
-        public string VenueName { get; set; }
-        public int Capacity { get; set; }
-        public string Location { get; set; }
-        public string ContactInfo { get; set; }
-        public ICollection<Match> Matches { get; set; }
-        public bool Delete { get; set; }
+        public string? VenueName { get; set; }
+        public int? Capacity { get; set; }
+        public string? Location { get; set; }
+        public string? ContactInfo { get; set; }
+        public ICollection<Match>? Matches { get; set; }
+        public bool? Delete { get; set; }
 
     }
 }

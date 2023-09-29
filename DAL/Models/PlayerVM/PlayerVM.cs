@@ -16,6 +16,6 @@ namespace DAL.Models.PlayerVM
         public string Position { get; set; }
         public int ShirtNumber { get; set; }
         public int CurrentTeamID { get; set; }
-        public Team CurrentTeam { get; set; }
+        
     }
 }

@@ -76,11 +76,11 @@ namespace DAL.Repo
             }
         }
 
-        public async Task<Response<Team>> GetAllTeamRepo(League leageu)
+        public async Task<Response<Team>> GetAllTeamRepo(int leageuId)
         {
             try
             {
-                var AllTeam = await db.teams.Where(n => n.Delete == false&&n.League==leageu).ToListAsync();
+                var AllTeam = await db.teams.Where(n => n.Delete == false && n.League.LeagueID==leageuId).ToListAsync();
                 return new Response<Team>
                 {
                     success = true,

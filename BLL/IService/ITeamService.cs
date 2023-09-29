@@ -15,6 +15,6 @@ namespace BLL.IService
         Task<Response<Team>> UpdateTeamAsync(int Id, TeamVM teamVM);
         Task<Response<Team>> DeleteTeamAsync(int Id);
         Task<Response<Team>> GetTeamAsync(int Id);
-        Task<Response<Team>> GetAllTeamAsync(League leageu);
+        Task<Response<Team>> GetAllTeamAsync(int leageuId);
     }
 }
