@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,8 @@ namespace DAL.Entities
         public string? RefereeName { get; set; }
         public int? LeagueID { get; set; }
         public League? League { get; set; }
+        public int VenueId { get; set; }
+        [ForeignKey("VenueId")]
         public Venue? Venue { get; set; }
         public bool? Delete { get; set; }
 

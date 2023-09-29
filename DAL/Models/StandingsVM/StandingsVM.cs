@@ -10,9 +10,7 @@ namespace DAL.Models.StandingsVM
     public class StandingsVM
     {
         public int LeagueID { get; set; }
-        public DAL.Entities.League League { get; set; }
         public int TeamID { get; set; }
-        public Team Team { get; set; }
         public int Wins { get; set; }
         public int Draws { get; set; }
         public int Losses { get; set; }

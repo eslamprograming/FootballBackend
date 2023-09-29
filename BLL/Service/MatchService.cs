@@ -27,15 +27,14 @@ namespace BLL.Service
                 Match match = new Match();
                 match.MatchDate = MatchsVM.MatchDate;
                 match.HomeTeamID = MatchsVM.HomeTeamID;
-                match.HomeTeam = MatchsVM.HomeTeam;
                 match.AwayTeamName = MatchsVM.AwayTeamName;
                 match.HomeTeamScore = MatchsVM.HomeTeamScore;
                 match.AwayTeamScore = MatchsVM.AwayTeamScore;
                 match.Location = MatchsVM.Location;
                 match.RefereeName = MatchsVM.RefereeName;
                 match.LeagueID = MatchsVM.LeagueID;
-                match.League = MatchsVM.League;
-                match.Venue = MatchsVM.Venue;
+                match.VenueId = MatchsVM.VenueId;
+                match.Delete = false;
 
                 var result = await _matchRepo.CreateMatchRepo(match);
 
@@ -113,15 +112,13 @@ namespace BLL.Service
                 Match match = new Match();
                 match.MatchDate = MatchsVM.MatchDate;
                 match.HomeTeamID = MatchsVM.HomeTeamID;
-                match.HomeTeam = MatchsVM.HomeTeam;
                 match.AwayTeamName = MatchsVM.AwayTeamName;
                 match.HomeTeamScore = MatchsVM.HomeTeamScore;
                 match.AwayTeamScore = MatchsVM.AwayTeamScore;
                 match.Location = MatchsVM.Location;
                 match.RefereeName = MatchsVM.RefereeName;
                 match.LeagueID = MatchsVM.LeagueID;
-                match.League = MatchsVM.League;
-                match.Venue = MatchsVM.Venue;
+                match.VenueId = MatchsVM.VenueId;
 
                 var result=await _matchRepo.UpdateMatchRepo(Id,match);
                 return result;

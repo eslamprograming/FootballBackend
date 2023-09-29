@@ -26,15 +26,14 @@ namespace BLL.Service
             {
                 Standings standings = new Standings();
                 standings.LeagueID = StandingssVM.LeagueID;
-                standings.League = StandingssVM.League;
                 standings.TeamID = StandingssVM.TeamID;
-                standings.Team = StandingssVM.Team;
                 standings.Wins = StandingssVM.Wins;
                 standings.Draws = StandingssVM.Draws;
                 standings.Losses = StandingssVM.Losses;
                 standings.Points = StandingssVM.Points;
                 standings.GoalsFor = StandingssVM.GoalsFor;
                 standings.GoalsAgainst = StandingssVM.GoalsAgainst;
+                standings.Delete = false;
 
                 var result = await _standingsRepo.CreateStandingsRepo(standings);
 
@@ -113,9 +112,7 @@ namespace BLL.Service
             {
                 Standings standings = new Standings();
                 standings.LeagueID = StandingssVM.LeagueID;
-                standings.League = StandingssVM.League;
                 standings.TeamID = StandingssVM.TeamID;
-                standings.Team = StandingssVM.Team;
                 standings.Wins = StandingssVM.Wins;
                 standings.Draws = StandingssVM.Draws;
                 standings.Losses = StandingssVM.Losses;

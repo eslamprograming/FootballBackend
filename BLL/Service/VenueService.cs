@@ -29,6 +29,7 @@ namespace BLL.Service
                 venue.Capacity = VenuesVM.Capacity;
                 venue.Location = VenuesVM.Location;
                 venue.ContactInfo = VenuesVM.ContactInfo;
+                venue.Delete = false;
 
                 var result = await _venueRepo.CreateVenueRepo(venue);
 
