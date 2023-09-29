@@ -21,6 +21,8 @@ namespace DAL.Entities
         public string? CoachName { get; set; }
         public ICollection<Player>? Players { get; set; } 
         public ICollection<Match>? HomeMatches { get; set; }
+        public int? LeagueId { get; set; }
+        [ForeignKey("LeagueId")]
         public League? League { get; set; }  
         //public ICollection<Match> AwayMatches { get; set; }
         public bool? Delete { get; set; }

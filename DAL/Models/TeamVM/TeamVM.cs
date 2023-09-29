@@ -14,6 +14,7 @@ namespace DAL.Models.TeamVM
         public string HomeCity { get; set; }
         public string HomeStadium { get; set; }
         public string CoachName { get; set; }
+        public int LeagueId { get; set; }
 
 
     }

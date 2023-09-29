@@ -29,6 +29,7 @@ namespace BLL.Service
                 league.Season = LeagueVM.Season;
                 league.StartDate = LeagueVM.StartDate;
                 league.EndDate = LeagueVM.EndDate;
+                league.Delete = false;
 
                 var result = await _leagueRepo.CreateLeagueRepo(league);
 
@@ -108,6 +109,7 @@ namespace BLL.Service
                 league.Season = LeagueVM.Season;
                 league.StartDate = LeagueVM.StartDate;
                 league.EndDate = LeagueVM.EndDate;
+                league.Delete = false;
                 var result=await _leagueRepo.UpdateLeagueRepo(Id, league);
                 return result;
             }

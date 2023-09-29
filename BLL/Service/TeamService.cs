@@ -31,6 +31,7 @@ namespace BLL.Service
                 team.HomeCity = teamVM.HomeCity;
                 team.HomeStadium = teamVM.HomeStadium;
                 team.CoachName = teamVM.CoachName;
+                team.LeagueId = teamVM.LeagueId;
                 team.Delete = false;
 
                 var result = await _teamRepo.CreateTeamRepo(team);
@@ -115,6 +116,7 @@ namespace BLL.Service
                 team.HomeCity = teamVM.HomeCity;
                 team.HomeStadium = teamVM.HomeStadium;
                 team.CoachName = teamVM.CoachName;
+                team.LeagueId = teamVM.LeagueId;
                 team.Delete = false;
 
                 var result = await _teamRepo.UpdateTeamRepo(Id, team);
