@@ -145,7 +145,7 @@ namespace DAL.Repo
                 }
                 team.League = Team.League;
                 team.TeamName = Team.TeamName;
-                team.TeamLogo = Team.TeamLogo;
+                //team.TeamLogo = Team.TeamLogo;
                 team.FoundedYear = Team.FoundedYear;
                 team.HomeCity = Team.HomeCity;
                 team.HomeStadium = Team.HomeStadium;

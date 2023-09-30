@@ -18,7 +18,7 @@ namespace Football.Controllers
         }
 
         [HttpPost("AddNewLeague")]
-        public async Task<IActionResult> AddNewLeague(LeagueVM leagueVM)
+        public async Task<IActionResult> AddNewLeague([FromForm]LeagueVM leagueVM)
         {
             if(!ModelState.IsValid) { return BadRequest(ModelState); }
             var result = await _leagueService.CreateLeagueAsync(leagueVM);
@@ -55,7 +55,7 @@ namespace Football.Controllers
             return Ok(result);
         }
         [HttpPut("UpdateLeague")]
-        public async Task<IActionResult> UpdateLeague(int LeagueId,LeagueVM league)
+        public async Task<IActionResult> UpdateLeague(int LeagueId,[FromForm]LeagueVM league)
         {
             if (!ModelState.IsValid) { return BadRequest(ModelState); }
             if (LeagueId >= 0 && LeagueId == null)

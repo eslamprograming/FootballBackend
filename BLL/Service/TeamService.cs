@@ -26,7 +26,7 @@ namespace BLL.Service
             {
                 Team team = new Team();
                 team.TeamName=teamVM.TeamName;
-                team.TeamLogo = teamVM.TeamLogo;
+                team.TeamLogo =BLL.Helper.File.Save(teamVM.TeamLogo);
                 team.FoundedYear = teamVM.FoundedYear;
                 team.HomeCity = teamVM.HomeCity;
                 team.HomeStadium = teamVM.HomeStadium;
@@ -54,6 +54,7 @@ namespace BLL.Service
             try
             {
                 var result = await _teamRepo.DeleteTeamRepo(Id);
+                BLL.Helper.File.DeleteFileByLink(result.Value.TeamLogo);
                 return result;
             }
             catch (Exception e)
@@ -105,13 +106,13 @@ namespace BLL.Service
             }
         }
 
-        public async Task<Response<Team>> UpdateTeamAsync(int Id, TeamVM teamVM)
+        public async Task<Response<Team>> UpdateTeamAsync(int Id, TeamUpdateVM teamVM)
         {
             try
             {
                 Team team = new Team();
                 team.TeamName = teamVM.TeamName;
-                team.TeamLogo = teamVM.TeamLogo;
+                //team.TeamLogo =BLL.Helper.File.Save(teamVM.TeamLogo);
                 team.FoundedYear = teamVM.FoundedYear;
                 team.HomeCity = teamVM.HomeCity;
                 team.HomeStadium = teamVM.HomeStadium;

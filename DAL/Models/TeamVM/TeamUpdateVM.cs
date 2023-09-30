@@ -8,13 +8,11 @@ using System.Threading.Tasks;
 
 namespace DAL.Models.TeamVM
 {
-    public class TeamVM
+    public class TeamUpdateVM
     {
-        [Required(ErrorMessage ="Enter Team Name")]
+        [Required(ErrorMessage = "Enter Team Name")]
         public string TeamName { get; set; }
-        [Required(ErrorMessage = "Enter Team Logo")]
-
-        public IFormFile  TeamLogo { get; set; }
+        
         [Required(ErrorMessage = "Enter Founded Year")]
 
         public int FoundedYear { get; set; }
@@ -30,7 +28,5 @@ namespace DAL.Models.TeamVM
         [Required(ErrorMessage = "Enter LeagueId")]
 
         public int LeagueId { get; set; }
-
-
     }
 }

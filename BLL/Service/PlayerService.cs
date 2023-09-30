@@ -27,6 +27,7 @@ namespace BLL.Service
                 Player player = new Player();
                 player.FirstName=PlayersVM.FirstName;
                 player.LastName = PlayersVM.LastName;
+                player.PlayerPhoto = BLL.Helper.File.Save(PlayersVM.PlayerPhoto);
                 player.DateOfBirth = PlayersVM.DateOfBirth;
                 player.Nationality = PlayersVM.Nationality;
                 player.Position = PlayersVM.Position;
@@ -54,6 +55,7 @@ namespace BLL.Service
             try
             {
                 var result = await _playerRepo.DeletePlayerRepo(Id);
+                BLL.Helper.File.DeleteFileByLink(result.Value.PlayerPhoto);
 
                 return result;
             }

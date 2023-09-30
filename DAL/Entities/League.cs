@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace DAL.Entities
 
         public int LeagueID { get; set; }
         public string? LeagueName { get; set; }
+        public string? LeagueLogo { get; set; }
         public string? Season { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }

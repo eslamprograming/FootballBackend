@@ -17,7 +17,7 @@ namespace Football.Controllers
             _playerService = playerService;
         }
         [HttpPost("AddNewPlayer")]
-        public async Task<IActionResult> AddNewPlayer(PlayerVM playerVM)
+        public async Task<IActionResult> AddNewPlayer([FromForm]PlayerVM playerVM)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             var result = await _playerService.CreatePlayersAsync(playerVM);
@@ -45,7 +45,7 @@ namespace Football.Controllers
             return Ok(result);
         }
         [HttpPut("UpdatePlayerInfo")]
-        public async Task<IActionResult> UpdatePlayer(int PlayerId,PlayerVM playerVM)
+        public async Task<IActionResult> UpdatePlayer(int PlayerId,[FromForm]PlayerVM playerVM)
         {
             if(!ModelState.IsValid) return BadRequest(ModelState);
             if (PlayerId <= 0 && PlayerId == null) return BadRequest("player is not valid");

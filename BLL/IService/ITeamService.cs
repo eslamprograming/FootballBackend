@@ -12,7 +12,7 @@ namespace BLL.IService
     public interface ITeamService
     {
         Task<Response<Team>> CreateTeamAsync(TeamVM teamVM);
-        Task<Response<Team>> UpdateTeamAsync(int Id, TeamVM teamVM);
+        Task<Response<Team>> UpdateTeamAsync(int Id, TeamUpdateVM teamVM);
         Task<Response<Team>> DeleteTeamAsync(int Id);
         Task<Response<Team>> GetTeamAsync(int Id);
         Task<Response<Team>> GetAllTeamAsync(int leageuId);

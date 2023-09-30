@@ -26,6 +26,7 @@ namespace BLL.Service
             {
                 League league = new League();
                 league.LeagueName=LeagueVM.LeagueName;
+                league.LeagueLogo = BLL.Helper.File.Save(LeagueVM.LeagueLogo);
                 league.Season = LeagueVM.Season;
                 league.StartDate = LeagueVM.StartDate;
                 league.EndDate = LeagueVM.EndDate;
@@ -51,6 +52,7 @@ namespace BLL.Service
             try
             {
                 var result = await _leagueRepo.DeleteLeagueRepo(Id);
+                BLL.Helper.File.DeleteFileByLink(result.Value.LeagueLogo);
                 return result;
             }
             catch (Exception e)

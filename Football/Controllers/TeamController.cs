@@ -17,7 +17,7 @@ namespace Football.Controllers
             _teamService = teamService;
         }
         [HttpPost("AddNewTeam")]
-        public async Task<IActionResult> AddNewTeam(TeamVM teamVM)
+        public async Task<IActionResult> AddNewTeam([FromForm]TeamVM teamVM)
         {
             if (!ModelState.IsValid) { return BadRequest(ModelState); }
             var result = await _teamService.CreateTeamAsync(teamVM);
@@ -51,7 +51,7 @@ namespace Football.Controllers
             return Ok(result);
         }
         [HttpPost("UpdateTeam")]
-        public async Task<IActionResult> UpdateTeam(int TeamId,TeamVM teamVM)
+        public async Task<IActionResult> UpdateTeam(int TeamId,[FromForm]TeamUpdateVM teamVM)
         {
             if(!ModelState.IsValid) { return BadRequest(ModelState); }
             if (TeamId <= 0 && TeamId == null)

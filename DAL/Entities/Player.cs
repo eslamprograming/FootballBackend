@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace DAL.Entities
         public int PlayerID { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
+        public string? PlayerPhoto { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string? Nationality { get; set; }
         public string? Position { get; set; }

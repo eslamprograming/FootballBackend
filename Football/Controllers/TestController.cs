@@ -11,14 +11,14 @@ namespace Football.Controllers
         [Route("UploadFile")]
         public IActionResult UploadFile(IFormFile file)
         {
-           var result= BLL.Helper.UploadFile.Save(file);
+           var result= BLL.Helper.File.Save(file);
             return Ok(result);
         }
         [HttpDelete]
         [Route("DeleteFile")]
         public IActionResult DeleteFile(string file)
         {
-            var result = BLL.Helper.UploadFile.DeleteFileByLink(file);
+            var result = BLL.Helper.File.DeleteFileByLink(file);
             return Ok(result);
         }
     }

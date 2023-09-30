@@ -8,7 +8,7 @@ using System.IO;
 
 namespace BLL.Helper
 {
-    public static class UploadFile
+    public static class File
     {
         public static string Save(IFormFile file)
         {
