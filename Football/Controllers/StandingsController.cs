@@ -17,7 +17,7 @@ namespace Football.Controllers
             _standingsService = standingsService;
         }
         [HttpPost("AddNewStandings")]
-        public async Task<IActionResult> AddNewStandings(StandingsVM StandingsVM)
+        public async Task<IActionResult> AddNewStandings([FromForm] StandingsVM StandingsVM)
         {
             if (!ModelState.IsValid) { return BadRequest(ModelState); }
             var result = await _standingsService.CreateStandingssAsync(StandingsVM);
@@ -54,7 +54,7 @@ namespace Football.Controllers
             return Ok(result);
         }
         [HttpPut("UpdateStandings")]
-        public async Task<IActionResult> UpdateStandings(int StandingsId, StandingsVM Standings)
+        public async Task<IActionResult> UpdateStandings(int StandingsId,[FromForm] StandingsVM Standings)
         {
             if (!ModelState.IsValid) { return BadRequest(ModelState); }
             if (StandingsId >= 0 && StandingsId == null)

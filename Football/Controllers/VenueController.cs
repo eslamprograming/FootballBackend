@@ -17,7 +17,7 @@ namespace Football.Controllers
             _venueService = venueService;
         }
         [HttpPost("AddNewVenue")]
-        public async Task<IActionResult> AddNewVenue(VenueVM VenueVM)
+        public async Task<IActionResult> AddNewVenue([FromForm]VenueVM VenueVM)
         {
             if (!ModelState.IsValid) { return BadRequest(ModelState); }
             var result = await _venueService.CreateVenuesAsync(VenueVM);
@@ -54,7 +54,7 @@ namespace Football.Controllers
             return Ok(result);
         }
         [HttpPut("UpdateVenue")]
-        public async Task<IActionResult> UpdateVenue(int VenueId, VenueVM Venue)
+        public async Task<IActionResult> UpdateVenue(int VenueId, [FromForm]VenueVM Venue)
         {
             if (!ModelState.IsValid) { return BadRequest(ModelState); }
             if (VenueId >= 0 && VenueId == null)

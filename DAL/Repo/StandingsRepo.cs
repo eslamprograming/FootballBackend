@@ -24,7 +24,25 @@ namespace DAL.Repo
         {
             try
             {
-                await db.Standings.AddAsync(Standings);
+                var team = await db.Standings.Where(n => n.TeamID == Standings.TeamID).SingleOrDefaultAsync();
+                if (team == null)
+                {
+                    await db.Standings.AddAsync(Standings);
+                }
+                else
+                {
+                    team.LeagueID = Standings.LeagueID;
+                    team.TeamID = Standings.TeamID;
+                    team.Wins += Standings.Wins;
+                    team.Draws += Standings.Draws;
+                    team.Losses += Standings.Losses;
+                    team.GoalsFor += Standings.GoalsFor;
+                    team.GoalsAgainst += Standings.GoalsAgainst;
+                    team.Points += Standings.Points;
+                }
+
+
+
                 await db.SaveChangesAsync();
                 return new Response<Standings>
                 {

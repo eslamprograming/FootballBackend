@@ -17,7 +17,7 @@ namespace Football.Controllers
             _matchService = matchService;
         }
         [HttpPost("AddNewMatch")]
-        public async Task<IActionResult> AddNewMatch(MatchVM MatchVM)
+        public async Task<IActionResult> AddNewMatch([FromForm]MatchVM MatchVM)
         {
             if (!ModelState.IsValid) { return BadRequest(ModelState); }
             var result = await _matchService.CreateMatchsAsync(MatchVM);
@@ -54,7 +54,7 @@ namespace Football.Controllers
             return Ok(result);
         }
         [HttpPut("UpdateMatch")]
-        public async Task<IActionResult> UpdateMatch(int MatchId, MatchVM Match)
+        public async Task<IActionResult> UpdateMatch(int MatchId,[FromForm] UpdateMatchVM Match)
         {
             if (!ModelState.IsValid) { return BadRequest(ModelState); }
             if (MatchId >= 0 && MatchId == null)
@@ -62,6 +62,7 @@ namespace Football.Controllers
                 return BadRequest("Match is not valid");
             }
             var result = await _matchService.UpdateMatchsAsync(MatchId, Match);
+
             return Ok(result);
         }
     }

@@ -154,7 +154,7 @@ namespace DAL.Repo
                 match.MatchDate = Match.MatchDate;
                 match.HomeTeamID = Match.HomeTeamID;
                 match.HomeTeam = Match.HomeTeam;
-                match.AwayTeamName = Match.AwayTeamName;
+                match.AwayTeamID = Match.AwayTeamID;
                 match.HomeTeamScore = Match.HomeTeamScore;
                 match.AwayTeamScore = Match.AwayTeamScore;
                 match.Location = Match.Location;
@@ -162,6 +162,8 @@ namespace DAL.Repo
                 match.LeagueID = Match.LeagueID;
                 match.League = Match.League;
                 match.Venue = Match.Venue;
+
+                await db.SaveChangesAsync();
 
                 return new Response<Match>
                 {

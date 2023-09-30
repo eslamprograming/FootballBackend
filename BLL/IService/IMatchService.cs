@@ -12,7 +12,7 @@ namespace BLL.IService
     public interface IMatchService
     {
         Task<Response<Match>> CreateMatchsAsync(MatchVM MatchsVM);
-        Task<Response<Match>> UpdateMatchsAsync(int Id, MatchVM MatchsVM);
+        Task<Response<Match>> UpdateMatchsAsync(int Id, UpdateMatchVM MatchsVM);
         Task<Response<Match>> DeleteMatchsAsync(int Id);
         Task<Response<Match>> GetMatchsAsync(int Id);
         Task<Response<Match>> GetAllMatchsAsync(int groupCount);
