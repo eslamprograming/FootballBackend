@@ -1,0 +1,15 @@
+F:\footballmatch\BLL\bin\Release\net6.0\BLL.deps.json
+F:\footballmatch\BLL\bin\Release\net6.0\BLL.dll
+F:\footballmatch\BLL\bin\Release\net6.0\BLL.pdb
+F:\footballmatch\BLL\bin\Release\net6.0\DAL.dll
+F:\footballmatch\BLL\bin\Release\net6.0\DAL.pdb
+F:\footballmatch\BLL\obj\Release\net6.0\BLL.csproj.AssemblyReference.cache
+F:\footballmatch\BLL\obj\Release\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+F:\footballmatch\BLL\obj\Release\net6.0\BLL.AssemblyInfoInputs.cache
+F:\footballmatch\BLL\obj\Release\net6.0\BLL.AssemblyInfo.cs
+F:\footballmatch\BLL\obj\Release\net6.0\BLL.csproj.CoreCompileInputs.cache
+F:\footballmatch\BLL\obj\Release\net6.0\BLL.csproj.CopyComplete
+F:\footballmatch\BLL\obj\Release\net6.0\BLL.dll
+F:\footballmatch\BLL\obj\Release\net6.0\refint\BLL.dll
+F:\footballmatch\BLL\obj\Release\net6.0\BLL.pdb
+F:\footballmatch\BLL\obj\Release\net6.0\ref\BLL.dll

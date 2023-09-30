@@ -1,0 +1,14 @@
+F:\footballmatch\DAL\bin\Release\net6.0\DAL.deps.json
+F:\footballmatch\DAL\bin\Release\net6.0\DAL.runtimeconfig.json
+F:\footballmatch\DAL\bin\Release\net6.0\DAL.dll
+F:\footballmatch\DAL\bin\Release\net6.0\DAL.pdb
+F:\footballmatch\DAL\obj\Release\net6.0\DAL.csproj.AssemblyReference.cache
+F:\footballmatch\DAL\obj\Release\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+F:\footballmatch\DAL\obj\Release\net6.0\DAL.AssemblyInfoInputs.cache
+F:\footballmatch\DAL\obj\Release\net6.0\DAL.AssemblyInfo.cs
+F:\footballmatch\DAL\obj\Release\net6.0\DAL.csproj.CoreCompileInputs.cache
+F:\footballmatch\DAL\obj\Release\net6.0\DAL.dll
+F:\footballmatch\DAL\obj\Release\net6.0\refint\DAL.dll
+F:\footballmatch\DAL\obj\Release\net6.0\DAL.pdb
+F:\footballmatch\DAL\obj\Release\net6.0\DAL.genruntimeconfig.cache
+F:\footballmatch\DAL\obj\Release\net6.0\ref\DAL.dll
