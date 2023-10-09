@@ -12,9 +12,6 @@ namespace DAL.Models.Match
         public DateTime MatchDate { get; set; }
         public int HomeTeamID { get; set; }
         public int AwayTeamID { get; set; }
-
-        //public int HomeTeamScore { get; set; }
-        //public int AwayTeamScore { get; set; }
         public string Location { get; set; }
         public string RefereeName { get; set; }
         public int LeagueID { get; set; }

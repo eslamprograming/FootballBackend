@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace BLL.Helper
 {
@@ -15,7 +16,8 @@ namespace BLL.Helper
             Stream fileStream = GetFileAsStream("credentials.json");
             string folderId = "13DT57LBrkmKR0CGCd6qQ159r8pdi-Z5F";
             string fileUrl = UploadFileToGoogleDrive(file, folderId, fileStream);
-            return fileUrl;
+            string fileId = ConvertToDirectLink(fileUrl);
+            return fileId;
         }
 
         private static string UploadFileToGoogleDrive(IFormFile file, string folderId, Stream credentialsStream)
@@ -114,6 +116,18 @@ namespace BLL.Helper
             {
                 return $"Error: {ex.Message}";
             }
+        }
+        private static string ConvertToDirectLink(string googleDriveLink)
+        {
+            string fileId = ExtractFileId(googleDriveLink);
+            return $"https://drive.google.com/uc?id={fileId}";
+        }
+
+        private static string ExtractFileId(string link)
+        {
+            Regex regex = new Regex(@"/d/([^/]+)/");
+            Match match = regex.Match(link);
+            return match.Success ? match.Groups[1].Value : "";
         }
 
     }

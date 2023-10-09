@@ -85,7 +85,8 @@ namespace DAL.Repo
                     group=AllLeagueCount/ 10;   
                 }
                 group = (AllLeagueCount / 10) + 1;
-                var AllLeafueData=await db.Leagues.Where(n=>n.Delete==false).Skip((groupCount - 1)*10).Take(10).ToListAsync();  
+                var AllLeafueData=await db.Leagues.Where(n=>n.Delete==false)
+                    .Skip((groupCount - 1)*10).Take(10).ToListAsync();  
                 return new Response<League>
                 {
                     success = true,

@@ -18,6 +18,7 @@ namespace Football.Controllers
         }
 
         [HttpPost("AddNewLeague")]
+        //[Consumes("application/x-www-form-urlencoded")]
         public async Task<IActionResult> AddNewLeague([FromForm]LeagueVM leagueVM)
         {
             if(!ModelState.IsValid) { return BadRequest(ModelState); }
