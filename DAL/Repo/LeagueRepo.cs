@@ -109,7 +109,7 @@ namespace DAL.Repo
         {
             try
             {
-                var league = await db.Leagues.Where(n => n.LeagueID == Id && n.Delete == false).Include(n=>n.Teams).SingleOrDefaultAsync();
+                var league = await db.Leagues.Where(n => n.LeagueID == Id && n.Delete == false).Include(n=>n.Teams.Where(m=>m.Delete==false)).SingleOrDefaultAsync();
                 if (league == null)
                 {
                     return new Response<League>
