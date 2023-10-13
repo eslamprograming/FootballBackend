@@ -97,21 +97,24 @@ namespace DAL.Repo
         {
             try
             {
-                var AllStandingCount = await db.Standings.Where(n => n.Delete == false).CountAsync();
-                int group;
-                if (AllStandingCount % 10 == 0)
-                {
-                    group = AllStandingCount / 10;
-                }
-                group = (AllStandingCount / 10) + 1;
-                var AllStandingData = await db.Standings.Where(n => n.Delete == false).Skip((groupCount - 1) * 10).Take(10).ToListAsync();
+                //var AllStandingCount = await db.Standings.Where(n => n.Delete == false).CountAsync();
+                //int group;
+                //if (AllStandingCount % 10 == 0)
+                //{
+                //    group = AllStandingCount / 10;
+                //}
+                //group = (AllStandingCount / 10) + 1;
+                var AllStandingData = await db.Standings
+                .Where(n => n.Delete==false && n.LeagueID == groupCount)
+                .Include(m => m.Team)
+                .ToListAsync();
+
 
                 return new Response<Standings>
                 {
                     success = true,
                     statuscode="200",
-                    values=AllStandingData,
-                    groups=group
+                    values=AllStandingData
                 };
             }
             catch (Exception e)
