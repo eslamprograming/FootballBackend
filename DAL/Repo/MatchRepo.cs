@@ -86,7 +86,14 @@ namespace DAL.Repo
                     group = AllMatchCount / 10;
                 }
                 group = (AllMatchCount / 10) + 1;
-                var AllMatchData = await db.Matches.Where(n => n.Delete == false).Skip((groupCount - 1) * 10).Take(10).ToListAsync();
+                var AllMatchData = await db.Matches
+                    .Where(n => n.Delete == false)
+                    .Skip((groupCount - 1) * 10)
+                    .Take(10)
+                    .Include(m => m.HomeTeam)
+                    .Include(m => m.AwayTeam)
+                    .ToListAsync();
+
 
                 return new Response<Match>
                 {

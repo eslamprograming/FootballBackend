@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,13 +12,18 @@ namespace DAL.Entities
     public class Match
     {
         [Key]
-
         public int MatchID { get; set; }
+
         public DateTime? MatchDate { get; set; }
+
         public int? HomeTeamID { get; set; }
+        [ForeignKey("HomeTeamID")]
         public Team? HomeTeam { get; set; }
+
         public int? AwayTeamID { get; set; }
-        //public string? AwayTeamName { get; set; }
+        [ForeignKey("AwayTeamID")] // Corrected typo in the property name
+        public Team? AwayTeam { get; set; }
+
         public int? HomeTeamScore { get; set; }
         public int? AwayTeamScore { get; set; }
         public string? Location { get; set; }

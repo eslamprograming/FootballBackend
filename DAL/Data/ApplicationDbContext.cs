@@ -11,6 +11,17 @@ namespace DAL.Data
 {
     public class ApplicationDbContext:IdentityDbContext<ApplicationUser>
     {
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Match>()
+                .HasOne(m => m.AwayTeam)
+                .WithMany(t => t.AwayMatches)
+                .HasForeignKey(m => m.AwayTeamID);
+
+            // Configure other relationships...
+
+            base.OnModelCreating(modelBuilder);
+        }
         public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<Team> teams { get; set; }
         public DbSet<Player> Players { get; set; }

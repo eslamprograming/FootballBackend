@@ -30,8 +30,6 @@ namespace BLL.Service
                 match.MatchDate = MatchsVM.MatchDate;
                 match.HomeTeamID = MatchsVM.HomeTeamID;
                 match.AwayTeamID = MatchsVM.AwayTeamID;
-                //match.HomeTeamScore = MatchsVM.HomeTeamScore;
-                //match.AwayTeamScore = MatchsVM.AwayTeamScore;
                 match.Location = MatchsVM.Location;
                 match.RefereeName = MatchsVM.RefereeName;
                 match.LeagueID = MatchsVM.LeagueID;

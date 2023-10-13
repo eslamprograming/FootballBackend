@@ -50,7 +50,7 @@ namespace Football.Controllers
             var result = await _teamService.GetTeamAsync(TeamId);
             return Ok(result);
         }
-        [HttpPost("UpdateTeam")]
+        [HttpPut("UpdateTeam")]
         public async Task<IActionResult> UpdateTeam(int TeamId,[FromForm]TeamUpdateVM teamVM)
         {
             if(!ModelState.IsValid) { return BadRequest(ModelState); }
